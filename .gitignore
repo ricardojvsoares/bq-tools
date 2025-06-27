@@ -1,0 +1,9 @@
+build/
+node_modules/
+
+.env
+*.env
+.env.*
+!.env.example
+
+*.schema.json

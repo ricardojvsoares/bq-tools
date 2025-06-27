@@ -1,0 +1,48 @@
+{
+  "name": "@nodeart/bq-tools",
+  "version": "1.0.0",
+  "description": "",
+  "main": "./build/esm/index.js",
+  "types": "./build/esm/index.d.ts",
+  "exports": {
+    ".": {
+      "import": "./build/esm/index.js",
+      "require": "./build/cjs/index.js",
+      "types": "./build/esm/index.d.ts"
+    },
+    "./cf": {
+      "import": "./build/esm/index-cf.js",
+      "require": "./build/cjs/index-cf.js",
+      "types": "./build/esm/index-cf.d.ts"
+    }
+  },
+  "bin": {
+    "nodeart-bq-cli": "bin/cli.js"
+  },
+  "scripts": {
+    "build": "rm -rf build && tsc -b tsconfig.cjs.json tsconfig.esm.json",
+    "cli-ts": "node -r ts-node/register -r dotenv/config ./src/cli.ts dotenv_config_path=./.env",
+    "cli": "./bin/cli.js",
+    "lint": "tsc --noEmit && eslint --cache --cache-location=node_modules/.cache/eslint/ --cache-strategy=content",
+    "prepare": "husky"
+  },
+  "dependencies": {
+    "jose": "^6.0.11"
+  },
+  "devDependencies": {
+    "@commitlint/cli": "^19.8.1",
+    "@commitlint/config-conventional": "^19.8.1",
+    "dotenv": "^16.5.0",
+    "eslint": "^9.29.0",
+    "eslint-config-prettier": "^10.1.5",
+    "eslint-html-reporter": "^0.7.4",
+    "eslint-import-resolver-typescript": "^4.4.3",
+    "eslint-plugin-import": "^2.32.0",
+    "eslint-plugin-prettier": "^5.5.0",
+    "husky": "^9.1.7",
+    "prettier": "^3.6.0",
+    "ts-node": "^10.9.2",
+    "typescript": "^5.8.3",
+    "typescript-eslint": "^8.35.0"
+  }
+}
