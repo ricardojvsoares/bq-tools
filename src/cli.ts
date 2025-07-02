@@ -29,7 +29,7 @@ void (async () => {
   await bq.createDatasetIfNotExists(config.dataset);
 
   for (const { name, schema } of schemas) {
-    const tableId = `${config.tablesPrefix}${name}${config.tablesSuffix}`;
+    const tableId = `${config.tablesPrefix ?? ''}${name}${config.tablesSuffix ?? ''}`;
 
     console.log(`Syncing table '${config.dataset}.${tableId}'`);
     await bq.createOrUpdateTableSchema(config.dataset, tableId, schema);

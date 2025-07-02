@@ -17,6 +17,12 @@ Changes that have yet to make it into the release version will be listed under `
 
 ## Unreleased
 
+## v1.0.1 - 2025-07-02
+
+### Fixed
+
+- Fixed CLI table name prefix/suffix concatenation
+
 ## v1.0.0 - 2025-07-01
 
 ### Added
