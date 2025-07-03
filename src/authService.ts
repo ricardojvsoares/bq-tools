@@ -55,12 +55,12 @@ export class AuthService {
     let jwt: string;
     try {
       jwt = await new jose.SignJWT({ scope })
+        .setProtectedHeader({ typ: 'JWT', alg: 'RS256', kid: credentials.private_key_id })
+        .setIssuer(credentials.client_email)
+        .setSubject(credentials.client_email)
         .setAudience(credentials.token_uri)
         .setExpirationTime(expires)
         .setIssuedAt(issued)
-        .setIssuer(credentials.client_email)
-        .setProtectedHeader({ typ: 'JWT', alg: 'RS256', kid: credentials.private_key_id })
-        .setSubject(credentials.client_email)
         .sign(key);
     } catch (error) {
       throw new Error(`Failed to sign auth token payload: ${(error as Error)?.message}`);

@@ -1,6 +1,6 @@
 {
   "name": "@nodeart/bq-tools",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "",
   "main": "./build/esm/index.js",
   "types": "./build/esm/index.d.ts",

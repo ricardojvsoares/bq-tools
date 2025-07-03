@@ -17,6 +17,12 @@ Changes that have yet to make it into the release version will be listed under `
 
 ## Unreleased
 
+## v1.0.2 - 2025-07-03
+
+### Fixed
+
+- Fixed JWT sign order
+
 ## v1.0.1 - 2025-07-02
 
 ### Fixed
