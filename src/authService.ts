@@ -41,6 +41,8 @@ export class AuthService {
       this.cryptoKey = await jose.importPKCS8(this.credentials.private_key, 'RS256', { extractable: false });
     }
 
+    Object.defineProperty(this.cryptoKey, Symbol.toStringTag, { value: 'CryptoKey' });
+
     return this.cryptoKey;
   }
 

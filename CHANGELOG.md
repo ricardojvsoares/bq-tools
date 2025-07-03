@@ -17,6 +17,12 @@ Changes that have yet to make it into the release version will be listed under `
 
 ## Unreleased
 
+## v1.0.3 - 2025-07-03
+
+### Fixed
+
+- Add JWT crypto key `toStringTag`
+
 ## v1.0.2 - 2025-07-03
 
 ### Fixed
