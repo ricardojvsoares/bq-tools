@@ -25,6 +25,9 @@ void (async () => {
   const bq = await new BigQueryNodeService(credentials);
   const schemas = await getDirSchemas(config.schemasPath);
 
+  if (schemas.length === 0) {
+    throw new Error('No Schemas found');
+  }
   console.log(`Syncing dataset '${config.dataset}'`);
   await bq.createDatasetIfNotExists(config.dataset);
 
